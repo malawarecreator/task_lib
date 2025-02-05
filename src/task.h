@@ -6,7 +6,7 @@
 
 typedef void (*task_func_t)(void);
 
-typedef struct {
+typedef struct { 
     task_func_t func;
     uint8_t active;
 } task_t;
