@@ -16,3 +16,4 @@ void scheduler_run();
 
 void add_task(task_func_t func);
 
+void terminate_task(task_func_t func);
