@@ -34,5 +34,12 @@ $(LIB): $(OBJS)
 # Clean build artifacts
 clean:
 	rm -rf bin
-
+	rm -rf dist
+generate-dist:
+	mkdir -p dist
+	cp src/task.h dist
+	cp bin/lib/libtask.a dist
+	echo "mkdir -p /usr/local/lib /usr/local/include && cp libtask.a /usr/local/lib && cp task.h /usr/local/include" > dist/install.sh
+	tar -czvf dist.tar.gz dist
+	rm -rf dist
 .PHONY: all clean
